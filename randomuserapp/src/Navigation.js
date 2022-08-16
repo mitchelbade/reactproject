@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const linkStyles = {
   display: "inline-block",
-  width: "50px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
+  width: "100px",
+  padding: "10px",
+  background: "grey",
   textDecoration: "none",
   color: "white",
 };
@@ -19,9 +18,6 @@ function Navigation() {
         to="/"
         exact
         style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
       >
         Home
       </NavLink>
@@ -29,21 +25,22 @@ function Navigation() {
         to="/users"
         exact
         style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
       >
-        About
+        Users
       </NavLink>
       <NavLink
-        to="/login"
+        to="/usergenerator"
         exact
         style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
       >
-        Login
+        User Generator
+      </NavLink>
+      <NavLink
+        to="/newuserform"
+        exact
+        style={linkStyles}
+      >
+        New User
       </NavLink>
     </div>
   );

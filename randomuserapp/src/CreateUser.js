@@ -2,8 +2,8 @@ import React from "react"
 
 function CreateUser() {
   return (
-    <div className="UserForm">
-      <h3>CreateUserForm</h3>
+    <div className="newuserform">
+      <h3>New User Form</h3>
     </div>
   );
 }
