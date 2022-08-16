@@ -1,14 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { NavLink } from "react-router-dom";
 
-const linkStyles = {
+const style = {
   display: "inline-block",
-  width: "100px",
+  margin: "5px",
+  width: "200px",
   padding: "10px",
   background: "grey",
   textDecoration: "none",
-  color: "white",
+  color: "white"
 };
 
 function Navigation() {
@@ -16,31 +16,27 @@ function Navigation() {
     <div>
       <NavLink
         to="/"
-        exact
-        style={linkStyles}
+        style={style}
       >
         Home
       </NavLink>
       <NavLink
-        to="/users"
-        exact
-        style={linkStyles}
+        to="/friendslist"
+        style={style}
       >
-        Users
+        Friends List
       </NavLink>
       <NavLink
-        to="/usergenerator"
-        exact
-        style={linkStyles}
+        to="/friendfinder"
+        style={style}
       >
-        User Generator
+        Find Friends!
       </NavLink>
       <NavLink
-        to="/newuserform"
-        exact
-        style={linkStyles}
+        to="/about"
+        style={style}
       >
-        New User
+        About
       </NavLink>
     </div>
   );

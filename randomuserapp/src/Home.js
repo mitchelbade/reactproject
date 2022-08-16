@@ -1,9 +1,11 @@
 import React from "react"
+import NewProfile from "./NewProfile";
 
 function Home() {
   return (
     <div className="Home">
-      <h2>This is an app for picking cool people</h2>
+      <h3>Connect with friends</h3>
+      <button>Create New Profile</button>
     </div>
   );
 }
