@@ -16,18 +16,12 @@ function App() {
     .then(data => setUsers(data))
   }, [])
 
-  //Manually add info from API
-  //Focus on getting minimum
-  //Work on more explicit naming
-
-  //Understanding State and useEffect
-  //using setState updates value and triggers rerender
-
 
   return (
     <Router>
       <div className="App">
         <header className="App-header">
+        <Navigation />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/newfriend" element={<NewFriend />} />
@@ -35,7 +29,6 @@ function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </header>
-        <Navigation />
       </div>
     </Router>
   );

@@ -3,12 +3,13 @@ import { NavLink } from "react-router-dom";
 
 const style = {
   display: "inline-block",
-  margin: "5px",
+  margin: "0",
   width: "200px",
-  padding: "10px",
-  background: "grey",
+  padding: "0",
+  background: "white",
   textDecoration: "none",
-  color: "black"
+  outline: "solid",
+  color: "black",
 };
 
 function Navigation() {

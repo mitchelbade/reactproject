@@ -5,7 +5,7 @@ function AddFriendButton() {
   return (
     <div>
       <button type="submit">
-        Add to Friends List
+        Add to Friends
       </button>
     </div>
   )
