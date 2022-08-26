@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from "./Home"
 import FriendsList from "./FriendsList"
-import FriendsFinder from "./FriendFinder"
 import About from "./About"
 import Navigation from "./Navigation"
+import NewFriend from "./NewFriend"
 import './App.css';
 
 function App() {
@@ -13,9 +13,7 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3001/users")
     .then(r => r.json())
-    .then(users => {
-      setUsers(users)
-    })
+    .then(data => setUsers(data))
   }, [])
 
   //Manually add info from API
@@ -28,19 +26,17 @@ function App() {
 
   return (
     <Router>
-      
       <div className="App">
         <header className="App-header">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
+            <Route path="/newfriend" element={<NewFriend />} />
             <Route path="/friendslist" element={<FriendsList users={users} />} />
-            <Route path="/friendfinder" element={<FriendsFinder />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </header>
         <Navigation />
       </div>
-      
     </Router>
   );
 }

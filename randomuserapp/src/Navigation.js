@@ -8,7 +8,7 @@ const style = {
   padding: "10px",
   background: "grey",
   textDecoration: "none",
-  color: "white"
+  color: "black"
 };
 
 function Navigation() {
@@ -25,12 +25,6 @@ function Navigation() {
         style={style}
       >
         Friends List
-      </NavLink>
-      <NavLink
-        to="/friendfinder"
-        style={style}
-      >
-        Find Friends!
       </NavLink>
       <NavLink
         to="/about"
