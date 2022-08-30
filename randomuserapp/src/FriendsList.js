@@ -1,21 +1,42 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import NewFriendForm from "./NewFriendForm";
+import Friend from "./Friend";
 
-function FriendsList({ users }) {
+
+function FriendsList() {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:3001/users")
+    .then(r => r.json())
+    .then(data => setUsers(data))
+  }, [])
+
+  function addFriend(newFriend) {
+    const updatedFriends = {...newFriend, id: users.id+1}
+    setUsers([...users, updatedFriends])
+  }
 
   const friendsList = users.map(user => 
-  <div key={user.id} className="Friends-list">
-    <img width="75" height="75" src={user.picture} />
-    <ul>{user.first} {user.last}</ul>
-    <ul>{user.cell}</ul>
-    <ul>{user.email}</ul>
-    <ul>{user.city}, {user.state} {user.postcode}</ul>
-  </div>
+  <Friend 
+  key={user.id}
+  picture={user.picture}
+  first={user.first}
+  last={user.last}
+  cell={user.cell}
+  email={user.email}
+  city={user.city}
+  state={user.state}
+  postcode={user.postcode}
+  />
   )
 
   return (
     <div className="friendslist">
+      <h3>Add Friend</h3>
+      <NewFriendForm addFriend={addFriend}/>
       <h3>Friends</h3>
-      {friendsList}
+        {friendsList}
     </div>
   );
 }

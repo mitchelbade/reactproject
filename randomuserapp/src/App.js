@@ -4,18 +4,11 @@ import Home from "./Home"
 import FriendsList from "./FriendsList"
 import About from "./About"
 import Navigation from "./Navigation"
-import NewFriend from "./NewFriend"
+import NewFriendForm from "./NewFriendForm"
 import './App.css';
 
 function App() {
-  const [users, setUsers] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:3001/users")
-    .then(r => r.json())
-    .then(data => setUsers(data))
-  }, [])
-
+  
 
   return (
     <Router>
@@ -24,9 +17,9 @@ function App() {
         <Navigation />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/newfriend" element={<NewFriend />} />
-            <Route path="/friendslist" element={<FriendsList users={users} />} />
+            <Route path="/friendslist" element={<FriendsList />} />
             <Route path="/about" element={<About />} />
+            <Route path="/addfriend" element={<NewFriendForm />} />
           </Routes>
         </header>
       </div>

@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home">
       <h3>Connect with friends</h3>
-      <Link to="/newfriend">
+      <Link to="/friendslist">
         <button>Add Friends</button>
       </Link>
     </div>
