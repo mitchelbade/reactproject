@@ -13,7 +13,7 @@ function FriendsList() {
   }, [])
 
   function addFriend(newFriend) {
-    const updatedFriends = {...newFriend, id: users.id+1}
+    const updatedFriends = {...newFriend}
     setUsers([...users, updatedFriends])
   }
 

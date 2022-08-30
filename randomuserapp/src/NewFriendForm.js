@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import AddFriendButton from "./AddFriendButton"
-import { useNavigate } from "react-router-dom"
 
 function NewFriendForm({ addFriend }) {
   const [newFriend, setNewFriend] = useState({
@@ -17,7 +16,6 @@ function NewFriendForm({ addFriend }) {
       picture: ""
   })
 
-  let nav = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -29,7 +27,19 @@ function NewFriendForm({ addFriend }) {
         body: JSON.stringify(newFriend)
       })
       .then(addFriend(newFriend))
-      .then(nav("/friendslist"))
+      .then(setNewFriend({
+        first: "",
+        last: "",
+        city: "",
+        state: "",
+        country: "",
+        postcode: "",
+        date: "",
+        cell: "",
+        email: "",
+        nat: "",
+        picture: ""
+    }))
   }
 
   function handleChange(e) {
