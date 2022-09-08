@@ -22,7 +22,7 @@ function FriendsList() {
       })
     const newFriend = {...friend, id: users.length+1}
     console.log(newFriend)
-    setUsers([...users, newFriend])
+    .then(setUsers([...users, newFriend]))
   }
 
   const friendsList = users.map(user => 
