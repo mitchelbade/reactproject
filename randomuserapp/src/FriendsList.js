@@ -12,9 +12,17 @@ function FriendsList() {
     .then(data => setUsers(data))
   }, [])
 
-  function addFriend(newFriend) {
-    const updatedFriends = {...newFriend}
-    setUsers([...users, updatedFriends])
+  function addFriend(friend) {
+    fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(friend)
+      })
+    const newFriend = {...friend, id: users.length+1}
+    console.log(newFriend)
+    setUsers([...users, newFriend])
   }
 
   const friendsList = users.map(user => 
@@ -34,7 +42,7 @@ function FriendsList() {
   return (
     <div className="friendslist">
       <h3>Add Friend</h3>
-      <NewFriendForm addFriend={addFriend}/>
+      <NewFriendForm addFriend={addFriend} />
       <h3>Friends</h3>
         {friendsList}
     </div>

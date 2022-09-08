@@ -1,3 +1,4 @@
+import userEvent from "@testing-library/user-event"
 import React from "react"
 
 function Friend({ first, last, picture, cell, email, city, state, postcode }) {
