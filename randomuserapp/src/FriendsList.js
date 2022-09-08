@@ -20,9 +20,8 @@ function FriendsList() {
         },
         body: JSON.stringify(friend)
       })
-    const newFriend = {...friend, id: users.length+1}
-    console.log(newFriend)
-    .then(setUsers([...users, newFriend]))
+      .then(r => r.json())
+      .then(newFriend => setUsers([...users, newFriend]))
   }
 
   const friendsList = users.map(user => 
