@@ -57,9 +57,9 @@
       "id": 4
     },
     {
-      "first": "",
-      "last": "",
-      "city": "",
+      "first": "asd",
+      "last": "asd",
+      "city": "asd",
       "state": "",
       "country": "",
       "postcode": "",
@@ -69,34 +69,6 @@
       "nat": "",
       "picture": "",
       "id": 5
-    },
-    {
-      "first": "",
-      "last": "",
-      "city": "",
-      "state": "",
-      "country": "",
-      "postcode": "",
-      "date": "",
-      "cell": "",
-      "email": "",
-      "nat": "",
-      "picture": "",
-      "id": 6
-    },
-    {
-      "first": "",
-      "last": "",
-      "city": "",
-      "state": "",
-      "country": "",
-      "postcode": "",
-      "date": "",
-      "cell": "",
-      "email": "",
-      "nat": "",
-      "picture": "",
-      "id": 7
     }
   ]
 }

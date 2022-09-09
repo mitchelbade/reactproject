@@ -5,7 +5,7 @@ import Friend from "./Friend";
 
 function FriendsList() {
   const [users, setUsers] = useState([])
-
+  
   useEffect(() => {
     fetch("http://localhost:3001/users")
     .then(r => r.json())
@@ -13,15 +13,7 @@ function FriendsList() {
   }, [])
 
   function addFriend(friend) {
-    fetch("http://localhost:3001/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(friend)
-      })
-      .then(r => r.json())
-      .then(newFriend => setUsers([...users, newFriend]))
+    setUsers([...users, friend])
   }
 
   const friendsList = users.map(user => 

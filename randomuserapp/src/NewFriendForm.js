@@ -20,8 +20,31 @@ function NewFriendForm({ addFriend }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    addFriend(friend)
-    setFriend({
+    const newFriend = {
+      first: friend.first,
+      last: friend.last,
+      city: friend.city,
+      state: friend.state,
+      country: friend.country,
+      postcode: friend.postcode,
+      date: friend.date,
+      cell: friend.cell,
+      email: friend.email,
+      nat: friend.nat,
+      picture: friend.picture
+    }
+    fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newFriend)
+    })
+    .then(r => r.json())
+    .then(data => {
+      addFriend(data)
+    })
+    .then(setFriend({
       first: "",
       last: "",
       city: "",
@@ -33,7 +56,7 @@ function NewFriendForm({ addFriend }) {
       email: "",
       nat: "",
       picture: ""
-    })
+    }))
   }
 
   function handleChange(e) {
